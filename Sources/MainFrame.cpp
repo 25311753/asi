@@ -438,3 +438,10 @@ void __fastcall TMainForm::IDM_YJ_CSSZClick(TObject *Sender)
 //---------------------------------------------------------------------------
 
 
+void __fastcall TMainForm::IDM_OP_MODClick(TObject *Sender)
+{
+        int nRight = 2;
+        Operation(nRight);
+}
+//---------------------------------------------------------------------------
+

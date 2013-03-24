@@ -46,7 +46,6 @@ __published:	// IDE-managed Components
         TButton *btnMod;
         TButton *btnDel;
         TButton *btnCancel;
-        TButton *btnOK;
         TPanel *Panel22;
         TListView *lvOpDetail;
         TPanel *plInput;
@@ -111,6 +110,11 @@ __published:	// IDE-managed Components
         TPanel *Panel14;
         TComboBox *cbbIsArrival;
         TPanel *Panel15;
+        TLabel *Label11;
+        TLabel *lbSumIn;
+        TLabel *Label6;
+        TLabel *lbSumOut;
+        TButton *btnOK;
         TPanel *Panel12;
         TComboBox *cbbCondIn;
         TPanel *Panel16;
@@ -123,10 +127,6 @@ __published:	// IDE-managed Components
         TDateTimePicker *dtpCondKB;
         TPanel *Panel24;
         TComboBox *cbbKBBank;
-        TLabel *Label11;
-        TLabel *lbSumIn;
-        TLabel *Label6;
-        TLabel *lbSumOut;
         void __fastcall FormShow(TObject *Sender);
         void __fastcall lvInDetailSelectItem(TObject *Sender,
           TListItem *Item, bool Selected);

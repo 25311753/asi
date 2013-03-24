@@ -85,6 +85,7 @@ __published:	// IDE-managed Components
         void __fastcall IDM_XK_CSSZClick(TObject *Sender);
         void __fastcall IDM_TC_CSSZClick(TObject *Sender);
         void __fastcall IDM_YJ_CSSZClick(TObject *Sender);
+        void __fastcall IDM_OP_MODClick(TObject *Sender);
 private:	// User declarations
 	void ResetMenu(TMenuItem *pMenu);
 

@@ -1,6 +1,6 @@
 object OperationForm: TOperationForm
-  Left = 142
-  Top = 14
+  Left = 190
+  Top = 112
   Width = 1066
   Height = 735
   BorderIcons = [biSystemMenu]
@@ -52,22 +52,13 @@ object OperationForm: TOperationForm
     TabOrder = 3
     OnClick = btnCancelClick
   end
-  object btnOK: TButton
-    Left = 479
-    Top = 0
-    Width = 63
-    Height = 25
-    Caption = #30830#23450
-    TabOrder = 4
-    OnClick = btnOKClick
-  end
   object Panel22: TPanel
     Left = 0
     Top = 462
     Width = 1049
     Height = 0
     Color = 16349446
-    TabOrder = 5
+    TabOrder = 4
   end
   object lvOpDetail: TListView
     Left = 2
@@ -168,7 +159,7 @@ object OperationForm: TOperationForm
     GridLines = True
     ReadOnly = True
     RowSelect = True
-    TabOrder = 6
+    TabOrder = 5
     ViewStyle = vsReport
     OnSelectItem = lvOpDetailSelectItem
   end
@@ -177,7 +168,7 @@ object OperationForm: TOperationForm
     Top = 30
     Width = 1046
     Height = 348
-    TabOrder = 7
+    TabOrder = 6
     object Label1: TLabel
       Left = 3
       Top = 100
@@ -748,7 +739,7 @@ object OperationForm: TOperationForm
     object Panel19: TPanel
       Left = 314
       Top = 305
-      Width = 175
+      Width = 223
       Height = 39
       TabOrder = 41
       object Label12: TLabel
@@ -902,6 +893,202 @@ object OperationForm: TOperationForm
       ParentFont = False
       TabOrder = 47
     end
+    object Panel12: TPanel
+      Left = 2
+      Top = 71
+      Width = 60
+      Height = 21
+      BevelInner = bvLowered
+      BevelOuter = bvLowered
+      Caption = #25910#27454#24773#20917
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentColor = True
+      ParentFont = False
+      TabOrder = 48
+    end
+    object cbbCondIn: TComboBox
+      Left = 64
+      Top = 71
+      Width = 121
+      Height = 21
+      Style = csDropDownList
+      Enabled = False
+      ImeName = #20013#25991' ('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
+      ItemHeight = 13
+      ItemIndex = 0
+      TabOrder = 49
+      Text = 'N'
+      Items.Strings = (
+        'N'
+        'Y')
+    end
+    object Panel16: TPanel
+      Left = 186
+      Top = 71
+      Width = 60
+      Height = 21
+      BevelInner = bvLowered
+      BevelOuter = bvLowered
+      Caption = #25910#27454#26085#26399
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentColor = True
+      ParentFont = False
+      TabOrder = 50
+    end
+    object dtpCondIn: TDateTimePicker
+      Left = 248
+      Top = 70
+      Width = 120
+      Height = 21
+      CalAlignment = dtaLeft
+      Date = 40894.3857962963
+      Time = 40894.3857962963
+      DateFormat = dfShort
+      DateMode = dmComboBox
+      ImeName = #20013#25991' ('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
+      Kind = dtkDate
+      ParseInput = False
+      TabOrder = 51
+    end
+    object Panel18: TPanel
+      Left = 371
+      Top = 71
+      Width = 60
+      Height = 21
+      BevelInner = bvLowered
+      BevelOuter = bvLowered
+      Caption = #25910#27454#38134#34892
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentColor = True
+      ParentFont = False
+      TabOrder = 52
+    end
+    object cbbInBank: TComboBox
+      Left = 433
+      Top = 71
+      Width = 90
+      Height = 21
+      Style = csDropDownList
+      Enabled = False
+      ImeName = #20013#25991' ('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
+      ItemHeight = 13
+      TabOrder = 53
+      Items.Strings = (
+        #20013#34892
+        #20892#34892
+        #24037#34892
+        #25307#34892)
+    end
+    object Panel20: TPanel
+      Left = 522
+      Top = 71
+      Width = 60
+      Height = 21
+      BevelInner = bvLowered
+      BevelOuter = bvLowered
+      Caption = #22238#25187#24773#20917
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentColor = True
+      ParentFont = False
+      TabOrder = 54
+    end
+    object cbbCondKB: TComboBox
+      Left = 584
+      Top = 71
+      Width = 121
+      Height = 21
+      Style = csDropDownList
+      Enabled = False
+      ImeName = #20013#25991' ('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
+      ItemHeight = 13
+      ItemIndex = 0
+      TabOrder = 55
+      Text = 'N'
+      Items.Strings = (
+        'N'
+        'Y')
+    end
+    object Panel23: TPanel
+      Left = 706
+      Top = 71
+      Width = 60
+      Height = 21
+      BevelInner = bvLowered
+      BevelOuter = bvLowered
+      Caption = #25903#20184#26085#26399
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentColor = True
+      ParentFont = False
+      TabOrder = 56
+    end
+    object dtpCondKB: TDateTimePicker
+      Left = 768
+      Top = 70
+      Width = 120
+      Height = 21
+      CalAlignment = dtaLeft
+      Date = 40894.3857962963
+      Time = 40894.3857962963
+      DateFormat = dfShort
+      DateMode = dmComboBox
+      ImeName = #20013#25991' ('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
+      Kind = dtkDate
+      ParseInput = False
+      TabOrder = 57
+    end
+    object Panel24: TPanel
+      Left = 891
+      Top = 71
+      Width = 60
+      Height = 21
+      BevelInner = bvLowered
+      BevelOuter = bvLowered
+      Caption = #25903#20184#38134#34892
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentColor = True
+      ParentFont = False
+      TabOrder = 58
+    end
+    object cbbKBBank: TComboBox
+      Left = 953
+      Top = 71
+      Width = 84
+      Height = 21
+      Style = csDropDownList
+      Enabled = False
+      ImeName = #20013#25991' ('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
+      ItemHeight = 13
+      TabOrder = 59
+      Items.Strings = (
+        #20013#34892
+        #20892#34892
+        #24037#34892
+        #25307#34892)
+    end
   end
   object edtDebug: TEdit
     Left = 704
@@ -909,9 +1096,8 @@ object OperationForm: TOperationForm
     Width = 65
     Height = 21
     ImeName = #35895#27468#25340#38899#36755#20837#27861' 2'
-    TabOrder = 8
+    TabOrder = 7
     Text = 'ed'
-    Visible = False
   end
   object Button1: TButton
     Left = 960
@@ -919,7 +1105,7 @@ object OperationForm: TOperationForm
     Width = 75
     Height = 25
     Caption = #26368#23567#21270
-    TabOrder = 9
+    TabOrder = 8
     OnClick = Button1Click
   end
   object btnQry: TButton
@@ -928,7 +1114,7 @@ object OperationForm: TOperationForm
     Width = 63
     Height = 25
     Caption = #26597#35810
-    TabOrder = 10
+    TabOrder = 9
     OnClick = btnQryClick
   end
   object Panel21: TPanel
@@ -937,7 +1123,7 @@ object OperationForm: TOperationForm
     Width = 1041
     Height = 7
     Color = 16349446
-    TabOrder = 11
+    TabOrder = 10
   end
   object Panel17: TPanel
     Left = 0
@@ -945,7 +1131,7 @@ object OperationForm: TOperationForm
     Width = 1043
     Height = 7
     Color = 16349446
-    TabOrder = 12
+    TabOrder = 11
   end
   object edtQryOId: TEdit
     Left = 64
@@ -953,208 +1139,16 @@ object OperationForm: TOperationForm
     Width = 120
     Height = 21
     ImeName = #20013#25991' ('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
+    TabOrder = 12
+  end
+  object btnOK: TButton
+    Left = 486
+    Top = 0
+    Width = 58
+    Height = 24
+    Caption = #30830#35748
     TabOrder = 13
-    Text = 'edtQryOId'
-  end
-  object Panel12: TPanel
-    Left = 2
-    Top = 102
-    Width = 60
-    Height = 21
-    BevelInner = bvLowered
-    BevelOuter = bvLowered
-    Caption = #25910#27454#24773#20917
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentColor = True
-    ParentFont = False
-    TabOrder = 14
-  end
-  object cbbCondIn: TComboBox
-    Left = 64
-    Top = 102
-    Width = 121
-    Height = 21
-    Style = csDropDownList
-    Enabled = False
-    ImeName = #20013#25991' ('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
-    ItemHeight = 13
-    ItemIndex = 0
-    TabOrder = 15
-    Text = 'N'
-    OnChange = cbbOpCodeSlChange
-    Items.Strings = (
-      'N'
-      'Y')
-  end
-  object Panel16: TPanel
-    Left = 186
-    Top = 102
-    Width = 60
-    Height = 21
-    BevelInner = bvLowered
-    BevelOuter = bvLowered
-    Caption = #25910#27454#26085#26399
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentColor = True
-    ParentFont = False
-    TabOrder = 16
-  end
-  object dtpCondIn: TDateTimePicker
-    Left = 248
-    Top = 101
-    Width = 120
-    Height = 21
-    CalAlignment = dtaLeft
-    Date = 40894.3857962963
-    Time = 40894.3857962963
-    DateFormat = dfShort
-    DateMode = dmComboBox
-    ImeName = #20013#25991' ('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
-    Kind = dtkDate
-    ParseInput = False
-    TabOrder = 17
-  end
-  object Panel18: TPanel
-    Left = 371
-    Top = 102
-    Width = 60
-    Height = 21
-    BevelInner = bvLowered
-    BevelOuter = bvLowered
-    Caption = #25910#27454#38134#34892
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentColor = True
-    ParentFont = False
-    TabOrder = 18
-  end
-  object cbbInBank: TComboBox
-    Left = 433
-    Top = 102
-    Width = 90
-    Height = 21
-    Style = csDropDownList
-    Enabled = False
-    ImeName = #20013#25991' ('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
-    ItemHeight = 13
-    TabOrder = 19
-    OnChange = cbbOpCodeSlChange
-    Items.Strings = (
-      #20013#34892
-      #20892#34892
-      #24037#34892
-      #25307#34892)
-  end
-  object Panel20: TPanel
-    Left = 522
-    Top = 102
-    Width = 60
-    Height = 21
-    BevelInner = bvLowered
-    BevelOuter = bvLowered
-    Caption = #22238#25187#24773#20917
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentColor = True
-    ParentFont = False
-    TabOrder = 20
-  end
-  object cbbCondKB: TComboBox
-    Left = 584
-    Top = 102
-    Width = 121
-    Height = 21
-    Style = csDropDownList
-    Enabled = False
-    ImeName = #20013#25991' ('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
-    ItemHeight = 13
-    ItemIndex = 0
-    TabOrder = 21
-    Text = 'N'
-    OnChange = cbbOpCodeSlChange
-    Items.Strings = (
-      'N'
-      'Y')
-  end
-  object Panel23: TPanel
-    Left = 706
-    Top = 102
-    Width = 60
-    Height = 21
-    BevelInner = bvLowered
-    BevelOuter = bvLowered
-    Caption = #25903#20184#26085#26399
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentColor = True
-    ParentFont = False
-    TabOrder = 22
-  end
-  object dtpCondKB: TDateTimePicker
-    Left = 768
-    Top = 101
-    Width = 120
-    Height = 21
-    CalAlignment = dtaLeft
-    Date = 40894.3857962963
-    Time = 40894.3857962963
-    DateFormat = dfShort
-    DateMode = dmComboBox
-    ImeName = #20013#25991' ('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
-    Kind = dtkDate
-    ParseInput = False
-    TabOrder = 23
-  end
-  object Panel24: TPanel
-    Left = 891
-    Top = 102
-    Width = 60
-    Height = 21
-    BevelInner = bvLowered
-    BevelOuter = bvLowered
-    Caption = #25903#20184#38134#34892
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Tahoma'
-    Font.Style = [fsBold]
-    ParentColor = True
-    ParentFont = False
-    TabOrder = 24
-  end
-  object cbbKBBank: TComboBox
-    Left = 953
-    Top = 102
-    Width = 84
-    Height = 21
-    Style = csDropDownList
-    Enabled = False
-    ImeName = #20013#25991' ('#31616#20307') - '#25628#29399#25340#38899#36755#20837#27861
-    ItemHeight = 13
-    TabOrder = 25
-    OnChange = cbbOpCodeSlChange
-    Items.Strings = (
-      #20013#34892
-      #20892#34892
-      #24037#34892
-      #25307#34892)
+    OnClick = btnOKClick
   end
   object TrayIcon1: TTrayIcon
     Hint = 'ASI'

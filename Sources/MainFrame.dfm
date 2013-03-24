@@ -30437,6 +30437,7 @@ object MainForm: TMainForm
       OnClick = IDM_OPERATIONClick
       object IDM_OP_MOD: TMenuItem
         Caption = #26356#26032
+        OnClick = IDM_OP_MODClick
       end
       object IDM_OP_QRY: TMenuItem
         Caption = #26597#35810
@@ -30483,6 +30484,7 @@ object MainForm: TMainForm
     end
     object IDM_FINANCE: TMenuItem
       Caption = #36130#21153#31649#29702
+      Visible = False
       object N3: TMenuItem
         Caption = #25910#20184#27454'\'#22238#25187
         OnClick = N3Click

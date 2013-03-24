@@ -428,11 +428,18 @@ void TOperationForm::onMod(TObject *Sender){
         szSQL.Format("update operation set \
                         op_code_sl='%s',  cl_shortname='%s',  goods_name='%s',  \
                         loadingid='%s',  way='%s', way0='%s', goods_src='%s',  goods_dst='%s',  num='%s',  \
-                        netweight='%s',  volume='%s', is_arrival=%d, date_arrival='%s' where oid='%s'", \
+                        netweight='%s',  volume='%s', is_arrival=%d, date_arrival='%s', \
+                        in_cond='%s', in_bank='%s', in_date='%s',\
+                        kb_cond='%s', kb_bank='%s', kb_date='%s' \
+                        where oid='%s'", \
                      cbbOpCodeSl->Text,   cbbClShortName->Text, cbbGoodsName->Text,\
                      (getByEdt(edtLoadingId)).c_str(), /*cbbWay->Text*/ get_way_type(cbbWay0)!=E_WAY_EMPTY ? cbbWay->Text.c_str():getByEdt(edtWayOther).c_str(), cbbWay0->Text, cbbGoodsSrc->Text, cbbGoodsDst->Text, edtNum->Text, \
-                     edtNetWeight->Text, edtVolume->Text, cbbIsArrival->Text=="Y"?1:0, GetDate(dtpArrival), edtOId->Text);
+                     edtNetWeight->Text, edtVolume->Text, cbbIsArrival->Text, GetDate(dtpArrival), \
+                     cbbCondIn->Text, cbbInBank->Text, GetDate(dtpCondIn), \
+                     cbbCondKB->Text, cbbKBBank->Text, GetDate(dtpCondKB), \
+                     edtOId->Text);
         sqls.push_back(szSQL);
+        edtDebug->Text = AnsiString(szSQL);
         //in&out
         genMoneySql(sqls, edtOId->Text);
         //run
@@ -647,8 +654,13 @@ void TOperationForm::Row2Editor(TListItem *pItem){
         lbGross->Caption = pItem->SubItems->Strings[i++];
         lbGrossPect->Caption = pItem->SubItems->Strings[i++];
 
+        locateCbbByValue(cbbCondIn, pItem->SubItems->Strings[i++]);
+        setDtp(dtpCondIn, pItem->SubItems->Strings[i++]);
+        locateCbbByValue(cbbInBank, pItem->SubItems->Strings[i++]);
 
-
+        locateCbbByValue(cbbCondKB, pItem->SubItems->Strings[i++]);
+        setDtp(dtpCondKB, pItem->SubItems->Strings[i++]);
+        locateCbbByValue(cbbKBBank, pItem->SubItems->Strings[i++]);
 }
 void __fastcall TOperationForm::btnInAddClick(TObject *Sender)
 {
@@ -1020,9 +1032,10 @@ void __fastcall TOperationForm::btnQryClick(TObject *Sender)
 {
         //operation
         CString szSQL = "";
-        szSQL = "select CONVERT(varchar, acceptdate, 111) acceptdate_op_date, *, dbo.get_in_should(oid) as in_should, dbo.get_out_should(oid) as out_should \
-                from operation, detail_kb, rec_in \
-                where 1=1 and oid=dkoid and oid=rioid ";
+        szSQL = "select CONVERT(varchar, acceptdate, 111) acceptdate_op_date, *, \
+                dbo.get_in_should(oid) as in_should, dbo.get_out_should(oid) as out_should \
+                from operation, detail_kb \
+                where 1=1 and oid=dkoid ";
         if (!edtQryOId->Text.IsEmpty()){
                 szSQL += " and oid="; szSQL += Str2DBString(edtQryOId->Text.c_str());
         }
@@ -1046,7 +1059,7 @@ void __fastcall TOperationForm::btnQryClick(TObject *Sender)
 	while(!dm1->Query1->Eof)
 	{
 
-                double in_real = dm1->Query1->FieldByName("in_price")->AsFloat;
+//                double in_real = dm1->Query1->FieldByName("in_price")->AsFloat;
                 double in_should = dm1->Query1->FieldByName("in_should")->AsFloat;
                 double out_should = dm1->Query1->FieldByName("out_should")->AsFloat;
 
@@ -1068,7 +1081,7 @@ void __fastcall TOperationForm::btnQryClick(TObject *Sender)
 		pItem->SubItems->Add(dm1->Query1->FieldByName("netweight")->AsFloat);
 		pItem->SubItems->Add(dm1->Query1->FieldByName("volume")->AsFloat);
 		pItem->SubItems->Add(dm1->Query1->FieldByName("op_code_op")->AsString);
-                pItem->SubItems->Add(dm1->Query1->FieldByName("is_arrival")->AsInteger==1?" «":"∑Ò");
+                pItem->SubItems->Add(dm1->Query1->FieldByName("is_arrival")->AsString);
                 pItem->SubItems->Add(dm1->Query1->FieldByName("date_arrival")->AsString);
                 pItem->SubItems->Add(in_should);
                 pItem->SubItems->Add(dm1->Query1->FieldByName("out_should")->AsFloat);
@@ -1080,6 +1093,13 @@ void __fastcall TOperationForm::btnQryClick(TObject *Sender)
                 }else{
                         pItem->SubItems->Add(0);
                 }
+
+                pItem->SubItems->Add(dm1->Query1->FieldByName("in_cond")->AsString);
+                pItem->SubItems->Add(dm1->Query1->FieldByName("in_date")->AsString);
+                pItem->SubItems->Add(dm1->Query1->FieldByName("in_bank")->AsString);
+                pItem->SubItems->Add(dm1->Query1->FieldByName("kb_cond")->AsString);
+                pItem->SubItems->Add(dm1->Query1->FieldByName("kb_date")->AsString);
+                pItem->SubItems->Add(dm1->Query1->FieldByName("kb_bank")->AsString);                
 
 /*                pItem->SubItems->Add(in_real);// µ ’from rec_in
                 if (in_should!=0){
@@ -1266,6 +1286,9 @@ void __fastcall TOperationForm::cbbWay0Change(TObject *Sender)
         }
 }
 //---------------------------------------------------------------------------
+
+
+
 
 
 
